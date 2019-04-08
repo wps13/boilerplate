@@ -4,6 +4,7 @@ This boilerplate contains webpack, integrated with the devServer, with configura
 
 ### It's configured to use:
 
+- ReactJS
 - Jest
 - Sass
 - Eslint
