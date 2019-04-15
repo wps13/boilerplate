@@ -15,6 +15,10 @@ This boilerplate contains webpack, integrated with the devServer, with configura
 
 Clone the repository.
 
+Install the dependencies
+
+`yarn`
+
 Start the aplication
 
 `yarn start`
