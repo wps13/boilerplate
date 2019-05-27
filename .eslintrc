@@ -12,7 +12,8 @@
     "prettier/prettier": "error",
     "max-len": ["error", 80],
     "react/prop-types": 0,
-    "no-undef": "warn"
+    "no-undef": "warn",
+    "import/no-unresolved": [2, { "caseSensitive": false }]
   },
   "env": {
     "browser": true
