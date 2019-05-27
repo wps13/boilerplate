@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
@@ -68,7 +69,6 @@ module.exports = {
           {
             loader: "image-webpack-loader",
             options: {
-              bypassOnDebug: true, // webpack@1.x
               disable: true, // webpack@2.x and newer
               name: "[path][name].[ext]",
             },
