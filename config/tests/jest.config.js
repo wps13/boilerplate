@@ -13,7 +13,7 @@ module.exports = {
   },
   moduleFileExtensions: ["js", "json", "jsx", "node"],
   transform: {
-    "^.+\\.js?$": "babel-jest",
+    "^.+\\.(js|jsx)?$": "babel-jest",
   },
   verbose: true,
   setupFilesAfterEnv: ["./rtl.setup.js"],
