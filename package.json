@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "jest-dom": "^3.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "3.3.0",
     "redux": "^4.0.1",
-    "redux-saga": "^1.0.2"
+    "redux-saga": "^1.0.2",
+    "snyk": "^1.305.0"
   },
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.config.dev.js --open --hot",
@@ -21,7 +22,9 @@
     "test:coverage": "jest --coverage --colors",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/**/**.js",
-    "lint:fix": "eslint ./src/**/**.js --fix"
+    "lint:fix": "eslint ./src/**/**.js --fix",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -91,5 +94,6 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
-  }
+  },
+  "snyk": true
 }
