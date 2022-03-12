@@ -1,7 +1,14 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["react", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "import", "jsx-a11y"],
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -11,11 +18,29 @@
     ],
     "prettier/prettier": "error",
     "max-len": ["error", 80],
-    "react/prop-types": 0,
+    "react/prop-types": "off",
     "no-undef": "warn",
-    "import/no-unresolved": [2, { "caseSensitive": false }]
+    "react/function-component-definition": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
   },
   "env": {
-    "browser": true
+    "es6": true,
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
