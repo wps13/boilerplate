@@ -1,51 +1,19 @@
-const path = require("path");
-const htmlWebpackPlugin = require("html-webpack-plugin");
-const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const webpackBase = require("./webpack.config.base");
 
 module.exports = {
+  ...webpackBase("production"),
   mode: "production",
-  entry: "./src/index.js",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclue: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
-        },
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: {
-              minimize: true,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-      },
-    ],
-  },
   plugins: [
-    new htmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: "./public/index.html",
-      filename: "./index.html",
+      filename: "./index.html"
     }),
-    new miniCssExtractPlugin({
+    new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].css",
-    }),
-  ],
+      chunkFilename: "[id].css"
+    })
+  ]
 };
